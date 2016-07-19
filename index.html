@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" ng-app="main" ng-controller="AppController">
+<head>
+    <meta charset="UTF-8">
+
+    <title ng-cloak>BrEdit | {{title}}</title>
+
+    <!--  共通のヘッダ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="vendors/bootstrap-markdown/css/bootstrap-markdown.min.css">
+    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="vendors/bootstrap-markdown/js/bootstrap-markdown.js"></script>
+
+    <script type="text/javascript" src="vendors/angular.js"></script>
+    <script type="text/javascript" src="vendors/angular-route.js"></script>
+
+    <script type="text/javascript" src="js/routes.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+
+    <script type="text/javascript" src="js/services/LocalStorageItems.js"></script>
+
+    <script type="text/javascript" src="js/controllers/AppController.js"></script>
+    <script type="text/javascript" src="js/controllers/ListController.js"></script>
+    <script type="text/javascript" src="js/controllers/AddController.js"></script>
+    <script type="text/javascript" src="js/controllers/ItemController.js"></script>
+
+    <style>
+        .main {
+            margin: 1em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <span class="navbar-brand">BrEdit</span>
+            <p class="navbar-text navbar-left">
+                <span>&gt;</span>
+                <span>{{title}}</span>
+            </p>
+            </div>
+        </div>
+    </nav>
+    <div class="main" ng-view></div>
+    <nav class="navbar-fixed-bottom">
+        <div class="btn-group btn-group-justified">
+            <a class="btn btn-default" style="font-size: 2em" route-href="/add" ><span class="glyphicon glyphicon-plus">新規</span></a>
+            <a class="btn btn-default" style="font-size: 2em" route-href="/list"><span class="glyphicon glyphicon-list">一覧</span></a>
+        </div>
+    </nav>
+</body>
+</html>

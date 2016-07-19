@@ -1,0 +1,22 @@
+<form role="form" name="addItemForm" ng-submit="addItem()" novalidate>
+    <div ng-show="!addItemForm.$valid">
+        <div class="alert alert-warning" role="alert">タイトルは必須です</div>
+    </div>
+    
+    <div class="form-group">
+        <label>タイトル(*)</label>
+        <input type="text" class="form-control" placeholder="タイトルを入力" ng-model="item.title" required>
+    </div>
+    <div class="form-group">
+        <label>本文</label>
+        <textarea data-provide="markdown" rows="15" class="form-control" placeholder="本文を入力"  ng-model="item.memo" ></textarea>
+        
+    </div>
+
+    <div class="form-group">
+        <label>日付</label>
+        <input type="date" class="form-control" placeholder="タスクの日付"  ng-model="item.date" >
+    </div>
+    <button class="btn btn-primary btn-block">追加</button>
+    <button class="btn btn-default btn-block" ng-click="cancelItem()">キャンセル</button>
+</form>
