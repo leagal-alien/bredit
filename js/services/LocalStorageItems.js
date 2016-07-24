@@ -37,11 +37,16 @@
         this.storage.setItem("edit-index",this.lastIndex);
         return uid;
     };
-
+    
+    p.save = function(item, uid){
+        var _uid = "edit-item-" + uid;
+        this.storage.setItem(_uid,JSON.stringify(item));
+        return _uid;
+    };
+    
     p.delete = function(uid){
         var _uid = "edit-item-" + uid;
         this.storage.removeItem(_uid);
-
         return true;
     };
 

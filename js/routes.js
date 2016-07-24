@@ -18,6 +18,9 @@
                     }
                 },
                 reloadOnSearch: false
+            }).when('/item/:uid/edit',{
+                templateUrl : 'views/edit.html',
+                controller  : 'EditController'
             }).when('/item/:uid',{
                 templateUrl : 'views/item.html',
                 controller  : 'ItemController'

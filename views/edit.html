@@ -1,5 +1,5 @@
-<form role="form" name="addItemForm" ng-submit="addItem()" novalidate>
-    <div ng-show="!addItemForm.$valid">
+<form role="form" name="editItemForm" ng-submit="editItem()" novalidate>
+    <div ng-show="!editItemForm.$valid">
         <div class="alert alert-warning" role="alert">タイトルは必須です</div>
     </div>
     
@@ -15,9 +15,9 @@
 
     <div class="form-group">
         <label>日付</label>
-        <input type="date" class="form-control" placeholder="タスクの日付"  ng-model="item.date" >
+        <input type="date" class="form-control" placeholder="タスクの日付"  ng-model="item.date" value="{{item.date | date : 'yyyy-MM-dd'}}">
     </div>
-
-    <button class="btn btn-primary btn-block">追加</button>
+    
+    <button class="btn btn-primary btn-block" ng-click="saveItem()">保存</button>
     <button class="btn btn-default btn-block" ng-click="cancelItem()">キャンセル</button>
 </form>

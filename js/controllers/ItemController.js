@@ -2,10 +2,9 @@
     module.controller('ItemController',[
         '$scope','$routeParams','$location','Items',
         function($scope,$routeParams,$location,Items){
-
             var uid = $routeParams['uid'];
             $scope.item = Items.get(uid);
-
+            
             if(!$scope.item){
                 $location.path('/list');
             }
@@ -15,6 +14,10 @@
             $scope.deleteItem = function(){
                 Items.delete(uid);
                 $location.path('/list');
+            }
+
+            $scope.editItem = function(){
+                $location.path('/item/' + uid + '/edit');
             }
 
     }]);
